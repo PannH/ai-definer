@@ -86,9 +86,7 @@ func getTermDefinition(c *gin.Context) {
 		})
 	}
 
-	_, ok := data["error"]
-
-	if ok {
+	if _, ok := data["error"]; ok {
 		c.JSON(http.StatusBadRequest, data)
 	} else {
 		c.JSON(http.StatusOK, data)
